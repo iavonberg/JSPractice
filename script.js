@@ -213,22 +213,58 @@
 // }
 
 
-let blinky;
-const btn1 = document.querySelector('.navbar-toggle');
-const output = document.querySelector('.container');
-const btns = document.querySelectorAll('button');
-btns.forEach(function(el){
-    el.addEventListener('click', stopChanger);
-})
+// let blinky;
+// const btn1 = document.querySelector('.navbar-toggle');
+// const output = document.querySelector('.container');
+// const btns = document.querySelectorAll('button');
+// btns.forEach(function(el){
+//     el.addEventListener('click', stopChanger);
+// })
 
-function stopChanger(e) {
-    e.preventDefault();
-    clearInterval(blinky);
+// function stopChanger(e) {
+//     e.preventDefault();
+//     clearInterval(blinky);
+// }
+// btn1.addEventListener('click', function() {
+//     blinky = setInterval(changer, 100);
+// })
+// function changer() {
+//     output.style.color = output.style.color == 'red' ? 'black' : 'red';
+//     output.style.backgroundColor = "#"+Math.random().toString(16).substr(-6);
+// }
+
+let stopper = false;
+let dir = 1;
+const mover = document.createElement('div');
+mover.style.position = 'absolute';
+mover.style.left = "10px";
+mover.style.top = '100px';
+mover.style.backgroundColor = 'red';
+mover.style.padding = "20px";
+mover.textContent = 'Catch Me!';
+mover.style.color = 'white';
+mover.addEventListener("click", animateMe);
+
+const myOutput = document.querySelector('.container');
+let animator = window.requestAnimationFrame(render);
+
+myOutput.appendChild(mover);
+
+function animateMe () {
+    if(stopper) {
+        animator = window.requestAnimationFrame(render);
+        stopper=false;
+        console.log(dir);
+        dir *= -1;
+    } else {
+        stopper = true;
+        window.cancelAnimationFrame(animator);
+    }
 }
-btn1.addEventListener('click', function() {
-    blinky = setInterval(changer, 100);
-})
-function changer() {
-    output.style.color = output.style.color == 'red' ? 'black' : 'red';
-    output.style.backgroundColor = "#"+Math.random().toString(16).substr(-6);
+
+function render() {
+    let pos = mover.offsetLeft;
+    console.log(pos);
+    mover.style.left = (pos+dir) + 'px';
+    animator = window.requestAnimationFrame(render);
 }
