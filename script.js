@@ -59,20 +59,27 @@
 //     console.log(myImgs[i]);
 // }
 
-const ul1 = document.getElementsByTagName('ul')[1];
-console.log(ul1.childNodes);
-console.log(ul1.children);
+// const ul1 = document.getElementsByTagName('ul')[1];
+// console.log(ul1.childNodes);
+// console.log(ul1.children);
 
-for (let i=0; i<ul1.children.length; i++){
-    console.log(ul1.children[i]);
-    console.log[ul1.children[i].nodeType];
-}
+// for (let i=0; i<ul1.children.length; i++){
+//     console.log(ul1.children[i]);
+//     console.log[ul1.children[i].nodeType];
+// }
 
-for (let i=0; i<ul1.childNodes.length; i++) {
-    console.log(ul1.childNodes[i]);
-    console.log(ul1.childNodes[i].nodeTypes);
-}
+// for (let i=0; i<ul1.childNodes.length; i++) {
+//     console.log(ul1.childNodes[i]);
+//     console.log(ul1.childNodes[i].nodeTypes);
+// }
 
-const el1 = document.querySelectorAll('div')[3];
-console.log(el1);
-console.dir(el1.childNodes[1].childNodes[0]);
+// const el1 = document.querySelectorAll('div')[3];
+// console.log(el1);
+// console.dir(el1.childNodes[1].childNodes[0]);
+
+const headerElement = document.getElementById('header');
+headerElement.innerHTML = "New Content";
+headerElement.style.backgroundColor = 'yellow';
+headerElement.style.fontFamily = "Verdana";
+headerElement.style.border = "5px solid green";
+headerElement.style.textAlign = "center";
