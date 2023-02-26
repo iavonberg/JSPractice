@@ -95,17 +95,23 @@
 //     el.style.border = "4px solid black";
 // }
 
-const rows = document.querySelectorAll('.row');
+// const rows = document.querySelectorAll('.row');
 
-for (let i = 0; i < rows.length; i++) {
-    console.log(rows[i].className);
-    rows[i].className += ' blue';
-};
+// for (let i = 0; i < rows.length; i++) {
+//     console.log(rows[i].className);
+//     rows[i].className += ' blue';
+// };
 
-rows.forEach(function (el,index) {
-    console.log(el);
-    console.log(index);
-    // el.classList.add('red');
-    el.classList.remove('blue');
-    el.classList.toggle('red');
-})
+// rows.forEach(function (el,index) {
+//     console.log(el);
+//     console.log(index);
+//     // el.classList.add('red');
+//     el.classList.remove('blue');
+//     el.classList.toggle('red');
+// })
+
+const btn = document.querySelector('button');
+btn.setAttribute('id','myButton');
+console.log(btn.id);
+btn.removeAttribute('id', 'myButton');
+console.log(btn.id);
