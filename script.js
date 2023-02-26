@@ -84,13 +84,28 @@
 // headerElement.style.border = "5px solid green";
 // headerElement.style.textAlign = "center";
 
-const rowElement = document.getElementsByClassName('row');
+// const rowElement = document.getElementsByClassName('row');
 
-for (let i = 0; i < rowElement.length; i++) {
-    console.log(rowElement[i]);
-    let el = rowElement[i];
-    el.style.textAlign = 'center';
-    el.style.color = 'blue';
-    el.style.backgroundColor = 'yellow';
-    el.style.border = "4px solid black";
-}
+// for (let i = 0; i < rowElement.length; i++) {
+//     console.log(rowElement[i]);
+//     let el = rowElement[i];
+//     el.style.textAlign = 'center';
+//     el.style.color = 'blue';
+//     el.style.backgroundColor = 'yellow';
+//     el.style.border = "4px solid black";
+// }
+
+const rows = document.querySelectorAll('.row');
+
+for (let i = 0; i < rows.length; i++) {
+    console.log(rows[i].className);
+    rows[i].className += ' blue';
+};
+
+rows.forEach(function (el,index) {
+    console.log(el);
+    console.log(index);
+    // el.classList.add('red');
+    el.classList.remove('blue');
+    el.classList.toggle('red');
+})
