@@ -181,20 +181,33 @@
 // output.addEventListener('mousemove',mouseMover);
 
 
-const num = 10;
-const output = document.querySelector('.container');
-const newDiv = document.createElement('div');
-newDiv.setAttribute('class', 'red');
-newDiv.style.fontSize = "3em";
-newDiv.textContent = "hello world";
-document.body.prepend(newDiv);
+// const num = 10;
+// const output = document.querySelector('.container');
+// const newDiv = document.createElement('div');
+// newDiv.setAttribute('class', 'red');
+// newDiv.style.fontSize = "3em";
+// newDiv.textContent = "hello world";
+// document.body.prepend(newDiv);
 
-for (let x=0;x<num;x++) {
-    let img = document.createElement('img');
-    let clr = Math.random().toString(16).substr(-6);
-    img.src = 'http://via.placeholder.com/100x100/'+clr;
-    img.addEventListener('click', function() {
-        img.src='http://via.placeholder.com/100x100/'+Math.random().toString(16).substr(-6);
-        })
-    newDiv.prepend(img);
+// for (let x=0;x<num;x++) {
+//     let img = document.createElement('img');
+//     let clr = Math.random().toString(16).substr(-6);
+//     img.src = 'http://via.placeholder.com/100x100/'+clr;
+//     img.addEventListener('click', function() {
+//         img.src='http://via.placeholder.com/100x100/'+Math.random().toString(16).substr(-6);
+//         })
+//     newDiv.prepend(img);
+// }
+
+const myName = document.querySelector('input[name=firstName]');
+const myEmail = document.querySelector('input[name=email]');
+console.log(myName.value);
+const submitBtn = document.querySelector('#submitButton');
+submitBtn.addEventListener('click', submitForm);
+const output = document.querySelector('#header');
+function submitForm(e) {
+    e.preventDefault();
+    if(myName.value) {
+        output.textContent = 'Hello ' + myName.value + ' (' + myEmail.value + ")";
+    }
 }
