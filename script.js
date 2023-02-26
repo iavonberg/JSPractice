@@ -170,12 +170,36 @@
 //     this.textContent = 'You clicked #'+counter;
 // }
 
+// const output = document.querySelector('.container');
+// const header = document.querySelector('#header');
+// const mouseMover = function(e) {
+//     console.log(e);
+//     console.log(e.x);
+//     header.textContent = "x is at " + e.x + ' y is at ' + e.y;
+// }
+
+// output.addEventListener('mousemove',mouseMover);
+
+
+const num = 10;
 const output = document.querySelector('.container');
-const header = document.querySelector('#header');
-const mouseMover = function(e) {
-    console.log(e);
-    console.log(e.x);
-    header.textContent = "x is at " + e.x + ' y is at ' + e.y;
+const newDiv = document.createElement('div');
+newDiv.setAttribute('class', 'red');
+newDiv.style.fontSize = "3em";
+newDiv.textContent = "hello world";
+document.body.prepend(newDiv);
+
+for (let x=0;x<num;x++) {
+    let img = document.createElement('img');
+    let clr = Math.random().toString(16).substr(-6);
+    img.src = 'http://via.placeholder.com/100x100/'+clr;
+    newDiv.prepend(img);
 }
 
-output.addEventListener('mousemove',mouseMover);
+const myImages = document.querySelectorAll('img');
+myImages.forEach(function(el){
+    el.addEventListener('click', function(e) {
+        let clr = Math.random().toString(16).substr(-6);
+        e.target.src = 'http://via.placeholder.com/100x100/'+clr;
+    })
+})
