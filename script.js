@@ -193,13 +193,8 @@ for (let x=0;x<num;x++) {
     let img = document.createElement('img');
     let clr = Math.random().toString(16).substr(-6);
     img.src = 'http://via.placeholder.com/100x100/'+clr;
+    img.addEventListener('click', function() {
+        img.src='http://via.placeholder.com/100x100/'+Math.random().toString(16).substr(-6);
+        })
     newDiv.prepend(img);
 }
-
-const myImages = document.querySelectorAll('img');
-myImages.forEach(function(el){
-    el.addEventListener('click', function(e) {
-        let clr = Math.random().toString(16).substr(-6);
-        e.target.src = 'http://via.placeholder.com/100x100/'+clr;
-    })
-})
