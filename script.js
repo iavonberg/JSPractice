@@ -124,21 +124,32 @@
 // console.log(li);
 // ul.appendChild(li);
 
-const vals = [200,300,400];
-const main = document.querySelector('.container');
-vals.forEach(function(v) {
-    let img = document.createElement('img');
-    console.log(img);
-    img.setAttribute('src', 'https://via.placeholder.com/'+ v + 'x100/0000ff')
-    let html = document.createElement('div');
-    html.appendChild(img);
-    main.prepend(html);
-    main.appendChild(html);
-    console.log(html);
-})
+// const vals = [200,300,400];
+// const main = document.querySelector('.container');
+// vals.forEach(function(v) {
+//     let img = document.createElement('img');
+//     console.log(img);
+//     img.setAttribute('src', 'https://via.placeholder.com/'+ v + 'x100/0000ff')
+//     let html = document.createElement('div');
+//     html.appendChild(img);
+//     main.prepend(html);
+//     main.appendChild(html);
+//     console.log(html);
+// })
 
-vals.forEach(function(v){
-    let html = '<img src="https://via.placeholder.com/'+v+'x100/0000ff">';
-    main.innerHTML += html;
-    // main.prepend(html);
+// vals.forEach(function(v){
+//     let html = '<img src="https://via.placeholder.com/'+v+'x100/0000ff">';
+//     main.innerHTML += html;
+//     // main.prepend(html);
+// })
+
+const myButton = document.querySelector('#btnA');
+myButton.textContent = "THIS ONE!!!!!";
+myButton.style.backgroundColor = 'red';;
+let counter = 0;
+const main = document.querySelector('.navbar');
+myButton.addEventListener('click', function() {
+    console.log('clicked!');
+    counter++;
+    main.textContent = "You clicked it!" + counter;
 })
