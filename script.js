@@ -154,18 +154,28 @@
 //     main.textContent = "You clicked it!" + counter;
 // })
 
-const btns = document.querySelectorAll('button');
-const output = document.querySelector('.navbar');
-let counter = 0;
-for (let i=0; i<btns.length; i++){
-    btns[i].addEventListener('click', btnClick);
+// const btns = document.querySelectorAll('button');
+// const output = document.querySelector('.navbar');
+// let counter = 0;
+// for (let i=0; i<btns.length; i++){
+//     btns[i].addEventListener('click', btnClick);
+// }
+
+// function btnClick(e) {
+//     console.log(e.target);
+//     console.log(this);
+//     counter++;
+//     console.log(counter);
+//     e.target.style.backgroundColor = 'red';
+//     this.textContent = 'You clicked #'+counter;
+// }
+
+const output = document.querySelector('.container');
+const header = document.querySelector('#header');
+const mouseMover = function(e) {
+    console.log(e);
+    console.log(e.x);
+    header.textContent = "x is at " + e.x + ' y is at ' + e.y;
 }
 
-function btnClick(e) {
-    console.log(e.target);
-    console.log(this);
-    counter++;
-    console.log(counter);
-    e.target.style.backgroundColor = 'red';
-    this.textContent = 'You clicked #'+counter;
-}
+output.addEventListener('mousemove',mouseMover);
