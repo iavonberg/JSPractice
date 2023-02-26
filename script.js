@@ -143,13 +143,29 @@
 //     // main.prepend(html);
 // })
 
-const myButton = document.querySelector('#btnA');
-myButton.textContent = "THIS ONE!!!!!";
-myButton.style.backgroundColor = 'red';;
+// const myButton = document.querySelector('#btnA');
+// myButton.textContent = "THIS ONE!!!!!";
+// myButton.style.backgroundColor = 'red';;
+// let counter = 0;
+// const main = document.querySelector('.navbar');
+// myButton.addEventListener('click', function() {
+//     console.log('clicked!');
+//     counter++;
+//     main.textContent = "You clicked it!" + counter;
+// })
+
+const btns = document.querySelectorAll('button');
+const output = document.querySelector('.navbar');
 let counter = 0;
-const main = document.querySelector('.navbar');
-myButton.addEventListener('click', function() {
-    console.log('clicked!');
+for (let i=0; i<btns.length; i++){
+    btns[i].addEventListener('click', btnClick);
+}
+
+function btnClick(e) {
+    console.log(e.target);
+    console.log(this);
     counter++;
-    main.textContent = "You clicked it!" + counter;
-})
+    console.log(counter);
+    e.target.style.backgroundColor = 'red';
+    this.textContent = 'You clicked #'+counter;
+}
