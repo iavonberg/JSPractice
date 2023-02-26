@@ -110,8 +110,16 @@
 //     el.classList.toggle('red');
 // })
 
-const btn = document.querySelector('button');
-btn.setAttribute('id','myButton');
-console.log(btn.id);
-btn.removeAttribute('id', 'myButton');
-console.log(btn.id);
+// const btn = document.querySelector('button');
+// btn.setAttribute('id','myButton');
+// console.log(btn.id);
+// btn.removeAttribute('id', 'myButton');
+// console.log(btn.id);
+
+const ul = document.querySelector('.row ul');
+const li = document.createElement('li');
+li.appendChild(document.createTextNode('List F'));
+li.setAttribute('id', 'listF');
+li.classList.add('listClass');
+console.log(li);
+ul.appendChild(li);
