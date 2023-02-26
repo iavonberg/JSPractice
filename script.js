@@ -1,2 +1,2 @@
-const hh = document.querySelector('#header');
+const hh = document.querySelector('h1');
 hh.textContent = "New Header";
