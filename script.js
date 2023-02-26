@@ -1,3 +1,2 @@
-document.body.innerHTML = "New Page";
-console.log(document.body);
-console.dir(document.body);
+const hh = document.querySelector('#header');
+hh.textContent = "New Header";
