@@ -48,3 +48,13 @@
 // const liActive = container.querySelectorAll("li.active");
 // console.log(liActive)
 // console.log(liActive[0]);
+
+const myImgs = document.getElementsByTagName("img");
+console.log(myImgs);
+
+for(let i=0;i<myImgs.length;i++) {
+    console.log(myImgs[i]);
+    myImgs[i].height = 20;
+    myImgs[i].title = myImgs[i].alt;
+    console.log(myImgs[i]);
+}
