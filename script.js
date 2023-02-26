@@ -116,10 +116,29 @@
 // btn.removeAttribute('id', 'myButton');
 // console.log(btn.id);
 
-const ul = document.querySelector('.row ul');
-const li = document.createElement('li');
-li.appendChild(document.createTextNode('List F'));
-li.setAttribute('id', 'listF');
-li.classList.add('listClass');
-console.log(li);
-ul.appendChild(li);
+// const ul = document.querySelector('.row ul');
+// const li = document.createElement('li');
+// li.appendChild(document.createTextNode('List F'));
+// li.setAttribute('id', 'listF');
+// li.classList.add('listClass');
+// console.log(li);
+// ul.appendChild(li);
+
+const vals = [200,300,400];
+const main = document.querySelector('.container');
+vals.forEach(function(v) {
+    let img = document.createElement('img');
+    console.log(img);
+    img.setAttribute('src', 'https://via.placeholder.com/'+ v + 'x100/0000ff')
+    let html = document.createElement('div');
+    html.appendChild(img);
+    main.prepend(html);
+    main.appendChild(html);
+    console.log(html);
+})
+
+vals.forEach(function(v){
+    let html = '<img src="https://via.placeholder.com/'+v+'x100/0000ff">';
+    main.innerHTML += html;
+    // main.prepend(html);
+})
