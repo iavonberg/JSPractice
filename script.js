@@ -199,15 +199,36 @@
 //     newDiv.prepend(img);
 // }
 
-const myName = document.querySelector('input[name=firstName]');
-const myEmail = document.querySelector('input[name=email]');
-console.log(myName.value);
-const submitBtn = document.querySelector('#submitButton');
-submitBtn.addEventListener('click', submitForm);
-const output = document.querySelector('#header');
-function submitForm(e) {
+// const myName = document.querySelector('input[name=firstName]');
+// const myEmail = document.querySelector('input[name=email]');
+// console.log(myName.value);
+// const submitBtn = document.querySelector('#submitButton');
+// submitBtn.addEventListener('click', submitForm);
+// const output = document.querySelector('#header');
+// function submitForm(e) {
+//     e.preventDefault();
+//     if(myName.value) {
+//         output.textContent = 'Hello ' + myName.value + ' (' + myEmail.value + ")";
+//     }
+// }
+
+
+let blinky;
+const btn1 = document.querySelector('.navbar-toggle');
+const output = document.querySelector('.container');
+const btns = document.querySelectorAll('button');
+btns.forEach(function(el){
+    el.addEventListener('click', stopChanger);
+})
+
+function stopChanger(e) {
     e.preventDefault();
-    if(myName.value) {
-        output.textContent = 'Hello ' + myName.value + ' (' + myEmail.value + ")";
-    }
+    clearInterval(blinky);
+}
+btn1.addEventListener('click', function() {
+    blinky = setInterval(changer, 100);
+})
+function changer() {
+    output.style.color = output.style.color == 'red' ? 'black' : 'red';
+    output.style.backgroundColor = "#"+Math.random().toString(16).substr(-6);
 }
