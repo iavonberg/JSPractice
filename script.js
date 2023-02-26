@@ -233,38 +233,39 @@
 //     output.style.backgroundColor = "#"+Math.random().toString(16).substr(-6);
 // }
 
-let stopper = false;
-let dir = 1;
-const mover = document.createElement('div');
-mover.style.position = 'absolute';
-mover.style.left = "10px";
-mover.style.top = '100px';
-mover.style.backgroundColor = 'red';
-mover.style.padding = "20px";
-mover.textContent = 'Catch Me!';
-mover.style.color = 'white';
-mover.addEventListener("click", animateMe);
+// let stopper = false;
+// let dir = 1;
+// const mover = document.createElement('div');
+// mover.style.position = 'absolute';
+// mover.style.left = "10px";
+// mover.style.top = '100px';
+// mover.style.backgroundColor = 'red';
+// mover.style.padding = "20px";
+// mover.textContent = 'Catch Me!';
+// mover.style.color = 'white';
+// mover.addEventListener("click", animateMe);
 
-const myOutput = document.querySelector('.container');
-let animator = window.requestAnimationFrame(render);
+// const myOutput = document.querySelector('.container');
+// let animator = window.requestAnimationFrame(render);
 
-myOutput.appendChild(mover);
+// myOutput.appendChild(mover);
 
-function animateMe () {
-    if(stopper) {
-        animator = window.requestAnimationFrame(render);
-        stopper=false;
-        console.log(dir);
-        dir *= -1;
-    } else {
-        stopper = true;
-        window.cancelAnimationFrame(animator);
-    }
-}
+// function animateMe () {
+//     if(stopper) {
+//         animator = window.requestAnimationFrame(render);
+//         stopper=false;
+//         console.log(dir);
+//         dir *= -1;
+//     } else {
+//         stopper = true;
+//         window.cancelAnimationFrame(animator);
+//     }
+// }
 
-function render() {
-    let pos = mover.offsetLeft;
-    console.log(pos);
-    mover.style.left = (pos+dir) + 'px';
-    animator = window.requestAnimationFrame(render);
-}
+// function render() {
+//     let pos = mover.offsetLeft;
+//     console.log(pos);
+//     mover.style.left = (pos+dir) + 'px';
+//     animator = window.requestAnimationFrame(render);
+// }
+
