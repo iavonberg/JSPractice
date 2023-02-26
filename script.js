@@ -49,12 +49,30 @@
 // console.log(liActive)
 // console.log(liActive[0]);
 
-const myImgs = document.getElementsByTagName("img");
-console.log(myImgs);
+// const myImgs = document.getElementsByTagName("img");
+// console.log(myImgs);
 
-for(let i=0;i<myImgs.length;i++) {
-    console.log(myImgs[i]);
-    myImgs[i].height = 20;
-    myImgs[i].title = myImgs[i].alt;
-    console.log(myImgs[i]);
+// for(let i=0;i<myImgs.length;i++) {
+//     console.log(myImgs[i]);
+//     myImgs[i].height = 20;
+//     myImgs[i].title = myImgs[i].alt;
+//     console.log(myImgs[i]);
+// }
+
+const ul1 = document.getElementsByTagName('ul')[1];
+console.log(ul1.childNodes);
+console.log(ul1.children);
+
+for (let i=0; i<ul1.children.length; i++){
+    console.log(ul1.children[i]);
+    console.log[ul1.children[i].nodeType];
 }
+
+for (let i=0; i<ul1.childNodes.length; i++) {
+    console.log(ul1.childNodes[i]);
+    console.log(ul1.childNodes[i].nodeTypes);
+}
+
+const el1 = document.querySelectorAll('div')[3];
+console.log(el1);
+console.dir(el1.childNodes[1].childNodes[0]);
