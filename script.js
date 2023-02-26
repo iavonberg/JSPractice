@@ -77,9 +77,20 @@
 // console.log(el1);
 // console.dir(el1.childNodes[1].childNodes[0]);
 
-const headerElement = document.getElementById('header');
-headerElement.innerHTML = "New Content";
-headerElement.style.backgroundColor = 'yellow';
-headerElement.style.fontFamily = "Verdana";
-headerElement.style.border = "5px solid green";
-headerElement.style.textAlign = "center";
+// const headerElement = document.getElementById('header');
+// headerElement.innerHTML = "New Content";
+// headerElement.style.backgroundColor = 'yellow';
+// headerElement.style.fontFamily = "Verdana";
+// headerElement.style.border = "5px solid green";
+// headerElement.style.textAlign = "center";
+
+const rowElement = document.getElementsByClassName('row');
+
+for (let i = 0; i < rowElement.length; i++) {
+    console.log(rowElement[i]);
+    let el = rowElement[i];
+    el.style.textAlign = 'center';
+    el.style.color = 'blue';
+    el.style.backgroundColor = 'yellow';
+    el.style.border = "4px solid black";
+}
